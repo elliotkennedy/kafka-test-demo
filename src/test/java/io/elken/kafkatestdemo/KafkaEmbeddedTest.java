@@ -165,16 +165,10 @@ public class KafkaEmbeddedTest {
 		private String brokers;
 
 		@Bean
-		public Map<String, Object> streamsConfig() {
+		public FactoryBean<StreamsBuilder> streamsBuilder() {
 			Map<String, Object> props = new HashMap<>();
 			props.put(StreamsConfig.COMMIT_INTERVAL_MS_CONFIG, 0L);
 			props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, brokers);
-			return props;
-		}
-
-		@Bean
-		public FactoryBean<StreamsBuilder> streamsBuilder() {
-			Map<String, Object> props = new HashMap<>(streamsConfig());
 			props.put(StreamsConfig.APPLICATION_ID_CONFIG, "test-app");
 			return new StreamsBuilderFactoryBean(new StreamsConfig(props));
 		}
