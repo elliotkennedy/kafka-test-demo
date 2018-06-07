@@ -1,12 +1,12 @@
-package io.elken.kafkatestdemo;
+package io.elken.springkafkaexamples;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class KafkaTestDemoApplication {
+public class KafkaStreamsDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(KafkaTestDemoApplication.class, args);
+		SpringApplication.run(KafkaStreamsDemoApplication.class, args);
 	}
 }

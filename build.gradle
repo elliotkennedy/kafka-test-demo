@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '2.0.0.BUILD-SNAPSHOT'
+		springBootVersion = '2.0.2.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -19,7 +19,7 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'io.elken'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
+sourceCompatibility = 1.10
 
 repositories {
 	mavenCentral()
@@ -27,16 +27,13 @@ repositories {
 	maven { url "https://repo.spring.io/milestone" }
 }
 
-
 dependencies {
 	compile 'org.springframework.boot:spring-boot-starter'
-    compile 'org.apache.kafka:kafka-clients:1.0.0'
-    compile 'org.apache.kafka:kafka-streams:1.0.0'
-    compile 'org.springframework.kafka:spring-kafka:2.1.0.RELEASE'
+    compile 'org.apache.kafka:kafka-streams:1.0.1'
+    compile 'org.springframework.kafka:spring-kafka:2.1.6.RELEASE'
 
     testCompile 'org.springframework.boot:spring-boot-starter-test'
-    testCompile 'org.springframework.kafka:spring-kafka-test:2.1.0.RELEASE'
-    testCompile 'org.apache.kafka:kafka-clients:1.0.0:test'
-    testCompile 'org.apache.kafka:kafka-streams:1.0.0:test'
+    testCompile 'org.springframework.kafka:spring-kafka-test:2.1.6.RELEASE'
+    testCompile 'org.apache.kafka:kafka-streams:1.0.1:test'
 
 }
